@@ -9,7 +9,8 @@ const mainConfig = {
   entry: './src/js/main.js',
   output: {
     filename: 'js/main.js',
-    path: path.resolve(__dirname, destFolder)
+    path: path.resolve(__dirname, destFolder),
+    hashFunction: "xxhash64"
   },
   plugins: [
     new CopyPlugin({

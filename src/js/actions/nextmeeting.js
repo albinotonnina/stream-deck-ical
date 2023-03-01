@@ -92,9 +92,13 @@ export default class NextMeeting extends Action {
           if (this.currentImage !== 'nextMeetingOrange' && difference <= this.orangeZoneTime && difference > this.redZoneTime) {
             this.currentImage = 'nextMeetingOrange'
             this.setImage(context, imageCache.nextMeetingOrange)
+            const meetingEnding = new Audio("assets/ding.mp3");
+            meetingEnding.play();
           } else if (this.currentImage !== 'nextMeetingRed' && difference <= this.redZoneTime) {
             this.currentImage = 'nextMeetingRed'
             this.setImage(context, imageCache.nextMeetingRed)
+            const meetingEnding = new Audio("assets/ding.mp3");
+            meetingEnding.play();
           }
           if (!this.marquee.active) {
             this.setTitle(context, `${sec2time(difference)}`)
